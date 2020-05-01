@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "pavitribandhan": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pavitribandhan"
+    }
+  },
+  "defaultProject": "pavitribandhan",
+  "cli": {
+    "analytics": "2f1045d3-ea53-4b24-b03f-efe5cd7cba01"
+  }
 }

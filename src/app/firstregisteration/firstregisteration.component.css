@@ -1,0 +1,65 @@
+.ragistration {
+    background-image: url("F:\4105.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fieldsetCssForFirstRegisteration {
+    border-color: seagreen;
+    box-shadow: indigo;
+    font-weight: bold;
+}
+
+.div_style {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button_css {
+    border-radius: 10px;
+    color: brown;
+    font-weight: bold;
+}
+
+.pb {
+    text-align: left;
+    margin-top: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.input_field {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.label_css {
+    margin-bottom: 10px;
+    color: brown;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.label_color {
+    color: black;
+    font-weight: bold;
+    text-align: left;
+}
+
+.left_side {
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+
+/* for login panel cross icon css */
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

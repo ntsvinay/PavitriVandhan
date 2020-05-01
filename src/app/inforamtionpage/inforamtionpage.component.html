@@ -1,0 +1,176 @@
+<div style="background-color: rgba(228, 192, 198, 0.432);">
+    <div style="position: fixed;">
+        <app-step-status-bar></app-step-status-bar>
+    </div>
+    <fieldset>
+        <div class="blockDiv" style="margin-top: 10%;">
+            <fieldset class="fieldsetCss">
+                <legend class="blockName">Basic Information</legend>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Matrial Status: </label>
+
+                    <select class="blockSelectBox" style="margin-left: 20%;" id="matrialStatus">
+            <option class="optionField" *ngFor="let matrialStatus of matrialStatus" [value]=matrialStatus>{{matrialStatus}}</option>
+        </select>
+
+                    <label class="textLabel" style="margin-left: 20%;">Date of Birth:</label>
+
+                    <input class="inputTextField" style="margin-left: 18%;" type="date">
+                </div>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Coutry Of Residence: </label>
+
+                    <select class="blockSelectBox" style="margin-left: 16.5%;" id="countryName" (change)="stateList($event.target.value)">
+                <option class="optionField" *ngFor="let countries of countries" [value]="countries">{{countries}}</option>
+            </select>
+
+                    <label class="textLabel" style="margin-left: 20%;">State of Residence:</label>
+
+                    <select class="blockSelectBox" style="margin-left: 17.5%;" id="countryName" (change)="districtList($event.target.value)">
+                <option class="optionField" *ngFor="let states of states" [value]="states">{{states}}</option>
+            </select>
+                </div>
+
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">City of Residence: </label>
+                    <select class="blockSelectBox" style="margin-left: 18%;" id="countryName" (change)="districtList($event.target.value)">
+            <option class="optionField" *ngFor="let states of states" [value]="states">{{states}}</option>
+        </select>
+                    <label class="textLabel" style="margin-left: 20%;">Pincode: </label>
+                    <select class="blockSelectBox" style="margin-left: 22.5%;" id="countryName">
+            <option class="optionField" *ngFor="let city of cityOfState" [value]="city">{{city}}</option>
+        </select>
+                </div>
+                <div class="lastRowDivOfBlock">
+                    <label class="blockDivFirstColumn">Address *</label>
+                    <input class="inputTextField" type="text" style="margin-left: 22.3%;" placeholder="Enter Your Address *">
+                </div>
+
+            </fieldset>
+        </div>
+        <div class="blockDiv">
+            <fieldset class="fieldsetCss">
+                <legend class="blockName">Physical Characteristics</legend>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Height :</label>
+                    <select class="blockSelectBox" style="margin-left: 23.6%;">
+<option>-Select-</option>
+</select>
+                    <label class="textLabel" style="margin-left: 19.5%;">Weight</label>
+                    <select class="blockSelectBox" style="margin-left: 24%;">
+<option>-Select-</option>
+</select>
+                </div>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Body Type :</label>
+                    <select class="blockSelectBox" style="margin-left: 21.5%;">
+            <option>-Select-</option>
+            </select>
+                    <label class="textLabel" style="margin-left: 19.4%;">Complexion :</label>
+                    <select class="blockSelectBox" style="margin-left: 20.7%;">
+            <option>-Select-</option>
+            </select>
+                </div>
+                <div class="lastRowDivOfBlock">
+                    <label class="blockDivFirstColumn">Physical Status :</label>
+                    <select class="blockSelectBox" style="margin-left: 19.5%;">
+<option>-Select-</option>
+</select>
+                </div>
+
+
+            </fieldset>
+
+        </div>
+        <div class="blockDiv">
+            <fieldset class="fieldsetCss">
+                <legend class="blockName">Educational Information</legend>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Highest Education :</label>
+                    <select class="blockSelectBox" style="margin-left: 18%;">
+            <option>-Select-</option>
+            </select>
+                    <label class="textLabel" style="margin-left: 20%;">University Type :</label>
+                    <select class="blockSelectBox" style="margin-left: 18%;"> 
+                <option>-Select-</option>
+                </select>
+                </div>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">University Name :</label>
+                    <input type="text" class="inputTextField" style="margin-left: 18.5%;" placeholder="University Name">
+                </div>
+
+            </fieldset>
+        </div>
+        <!--occupation-->
+        <div class="blockDiv">
+            <fieldset class="fieldsetCss">
+                <legend class="blockName">Occupation</legend>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Employment Type :</label>
+                    <select class="blockSelectBox" style="margin-left: 18.5%;">
+            <option>-Select-</option> </select>
+                    <label class="textLabel" style="margin-left: 20%;">Occupation Type :</label>
+                    <select class="blockSelectBox" style="margin-left: 17%;">
+        <option>-Select-</option>
+        </select>
+                </div>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Income :</label>
+                    <select class="blockSelectBox" style="margin-left: 23.8%;">
+            <option>-Select-</option>
+            </select>
+                    <label class="textLabel" style="margin-left: 20%">Annual Income :</label>
+                    <select class="blockSelectBox" style="margin-left: 17.8%;">
+<option>-Select-</option>
+</select>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <!--family-->
+        <div class="blockDiv">
+            <fieldset class="fieldsetCss">
+                <legend class="blockName">Family</legend>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Family Status:</label>
+                    <select class="blockSelectBox" style="margin-left: 20.8%;">
+            <option>-Select-</option>
+            </select>
+                    <label class="textLabel" style="margin-left: 20%;">Family Type:</label>
+                    <select class="blockSelectBox" style="margin-left: 19.5%;">
+            <option>-Select-</option>
+            </select>
+                </div>
+                <div class="rowDiv">
+                    <label class="blockDivFirstColumn">Family Value:</label>
+                    <select class="blockSelectBox" style="margin-left: 21%;">
+                <option>-Select-</option>
+                </select>
+                    <label class="textLabel" style="margin-left: 20%;">Family Member:</label>
+                    <select class="blockSelectBox" style="margin-left: 17.7%;">
+                <option>1-3 Member</option>
+                </select>
+                </div>
+                <div class="lastRowDivOfBlock">
+                    <label class="blockDivFirstColumn">Parent Contect Number:</label>
+                    <select class="smallSelectionBox" id="countryCode" style="margin-left: 15%;">
+                    <option class="optionField">+91</option>
+                </select>
+                    <input class="inputTextField" placeholder="mobile number *" type="number" style="margin-left: 1%;">
+                    <label class="textLabel" style="margin-left: 9.5%;">Parent Annual Income:</label>
+                    <select class="smallSelectionBox" id="currencyType" style="margin-left: 10%;">
+<option class="optionField" >INR</option>
+</select>
+                    <select class="smallSelectionBox" style="margin-left: 1%;">
+<option class="optionField">4-5 LPA</option>
+</select>
+                </div>
+            </fieldset>
+        </div>
+        <div style="margin-top: 2%;margin-bottom: 2%; text-align: center;">
+            <input class="submitBtn" type="button" value="submit">
+        </div>
+    </fieldset>
+</div>

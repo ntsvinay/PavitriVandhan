@@ -1,0 +1,24 @@
+.verticalLine {
+    margin-left: 2%;
+    border-left: 3px solid;
+    height: 190;
+}
+
+.margin_left {
+    margin-left: 10px;
+}
+
+.my_profile_legend {
+    margin-top: 5px;
+    border-radius: 2px;
+    padding: 0px 0px 0px 0px;
+    background-color: rgba(228, 192, 198, 0.432);
+}
+
+.my_profile_fieldset {
+    margin-top: 10px;
+}
+
+.answer_label {
+    font-weight: normal;
+}

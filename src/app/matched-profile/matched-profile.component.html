@@ -1,0 +1,95 @@
+<div style="text-align: left; background-color: burlywood;">
+    <div *ngFor="let details of apiData" style="width: 600px;height: 300px; margin-top: 5%; margin-left: 30%; ">
+        <fieldset style="background-color: white;">
+            <div class="row">
+                <div class="column" style="margin-left: 2%; width: 180px;">
+
+                    <img style="border: black; border-radius: 4%; border-width: 2px;border-style: outset; width: 150px; height: 180px;" src="assets/images/vinay.jpg">
+                </div>
+
+                <div class="column" style="width: 200px;">
+
+
+                    <div class="row" style="margin-top: 5%;">
+
+
+                        <div class="column" style="margin-left: 5%;">
+                            <p>{{details.name}},{{details.username}}</p>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <p>23 yrs,</p>
+                        </div>
+                        <div class="column">
+                            <p>Never Married</p>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <p>5.8 ft,</p>
+
+                        </div>
+                        <div class="column">
+                            <p>English</p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <p>{{details.address.street}},{{details.address.city}},</p>
+                        </div>
+                        <div class="column">
+                            <p>Baghel</p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="column" style="margin-top: 8%; width: 180px;">
+                    <div class="row">
+
+                        <div class="column">
+                            <p>Software Engineer</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="column">
+                            <p>MCA</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="column">
+                            <p>5,50,000/-</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+
+                <input class="submitBtn" style="margin-left: 30%;" type="button" value="Send Interest">
+                <input class="submitBtn" style="margin-left: 5%;" type="button" value="Shortlist">
+
+            </div>
+        </fieldset>
+    </div>
+</div>

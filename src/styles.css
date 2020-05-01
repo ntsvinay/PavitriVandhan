@@ -1,1 +1,179 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+.blockDiv {
+    margin-top: 5%;
+}
+
+.fieldsetCss {
+    background-color: white;
+    border-color: seagreen;
+    box-shadow: indigo;
+    font-weight: bold;
+}
+
+.rowDiv {
+    margin-top: 2%;
+}
+
+.lastRowDivOfBlock {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.blockDivFirstColumn {
+    margin-left: 3%;
+    font-weight: bold;
+}
+
+.textLabel {
+    font-weight: bold;
+}
+
+.inputTextField {
+    border-radius: 10px;
+    font-size: small;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.blockSelectBox {
+    overflow: hidden;
+    width: 125px;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.smallSelectionBox {
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.optionField {
+    color: crimson;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.blockName {
+    font-weight: bold;
+    color: saddlebrown;
+}
+
+.submitBtn {
+    height: 4%;
+    border-color: seagreen;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    padding: 7px;
+}
+
+fieldset {
+    border: 1px solid seagreen !important;
+    padding: 10px;
+    position: relative;
+    /* border-radius: 4px;
+    padding-left: 10px!important; */
+    border-color: seagreen;
+    box-shadow: indigo;
+    font-weight: bold;
+}
+
+legend {
+    font-size: 14px;
+    margin-bottom: 0px;
+    width: 35%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 5px 5px 10px;
+    background-color: #ffffff;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;
+    }
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
