@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 export class MatchedProfileComponent implements OnInit {
 
   apiData;
-  apiUrl='http://jsonplaceholder.typicode.com/users';
+  apiUrl='https://jsonplaceholder.typicode.com/users';
   constructor( private http:HttpClient) { }
 
   ngOnInit() {
