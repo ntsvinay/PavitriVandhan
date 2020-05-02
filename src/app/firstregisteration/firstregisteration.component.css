@@ -1,4 +1,5 @@
 .ragistration {
+    background-image: url(/assets/images/backgroundImage.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,6 +10,8 @@
     border-color: seagreen;
     box-shadow: indigo;
     font-weight: bold;
+    box-shadow: seagreen;
+    border-style: solid;
 }
 
 .div_style {

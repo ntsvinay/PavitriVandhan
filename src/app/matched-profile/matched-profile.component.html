@@ -1,5 +1,5 @@
 <div style="text-align: left; background-color: burlywood;">
-    <div *ngFor="let details of apiData" style="width: 600px;height: 300px; margin-top: 5%; margin-left: 30%; ">
+    <div *ngFor="let details of apiData" style="width: 600px;height: 300px; margin-top: 5%; margin-left: 25%; ">
         <fieldset style="background-color: white;">
             <div class="row">
                 <div class="column" style="margin-left: 2%; width: 180px;">
@@ -60,7 +60,7 @@
                 </div>
 
 
-                <div class="column" style="margin-top: 8%; width: 180px;">
+                <div class="column" style="margin-top: 8%; width: 150px; margin-left: 5%;">
                     <div class="row">
 
                         <div class="column">
@@ -87,7 +87,13 @@
             <div>
 
                 <input class="submitBtn" style="margin-left: 30%;" type="button" value="Send Interest">
-                <input class="submitBtn" style="margin-left: 5%;" type="button" value="Shortlist">
+                <button id="{{details.id}}" class="submitBtn" style="margin-left: 5%;" (click)="shortlist(details.id)"> Shortlist
+
+                    <img id="{{details.id}}" *ngIf="shortList_userId.includes(details.id)==true" src="{{icon1}}" style="padding-left: 5%; width: 20%;">
+                    <img id="{{details.id}}" *ngIf="shortList_userId.includes(details.id)==false" src="{{icon}}" style="padding-left: 5%; width: 20%;">
+                    
+                </button>
+
 
             </div>
         </fieldset>

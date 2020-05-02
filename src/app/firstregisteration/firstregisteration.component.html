@@ -1,14 +1,14 @@
 <div class="ragistration">
     <div class=" pb ">
 
-        <label style="margin-left: 3%;"> PavitriBhandhan</label>
+        <label style="margin-left: 3%;"> PavitriVandhan</label>
 
         <button class="submitBtn" style="margin-left: 70%;" type="button " (click)="show()">Sign In</button>
 
 
 
     </div>
-    <hr>
+    <hr style="height:3px;border:none;color:#333;background-color:#333;">
     <div style="width: 30%; text-align: center;margin-bottom: 5%;margin-top: 5%; margin-left:35%;">
         <fieldset class="fieldsetCssForFirstRegisteration">
             <form [formGroup]='registerationDetails' (ngSubmit)='onRegisterDetailsSubmit()'>
@@ -23,8 +23,8 @@
                     <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="mail" />
                 </div>
                 <div>
-                    <label class="label_color">Gender:</label>
-                    <input type="radio" id="male" name="gender" value="male" style="margin-left: 25%;" formControlName="gender">
+                    <label class="label_color" style="margin-right: 25%;">Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" formControlName="gender">
                     <label class="label_color" for="male">Male</label>
                     <input type="radio" id="female" name="gender" value="female" formControlName="gender">
                     <label class="label_color" for="female">Female</label>
