@@ -1,73 +1,73 @@
-<div class="ragistration">
-    <div class=" pb ">
+<div class="pb" style="background-color:saddlebrown">
 
-        <label style="margin-left: 3%;"> PavitriVandhan</label>
+    <label style=" margin-left: 3%; "> PavitriVandhan</label>
 
-        <button class="submitBtn" style="margin-left: 70%;" type="button " (click)="show()">Sign In</button>
+    <button class="submitBtn " style="margin-left: 70%; " type="button ">Sign In</button>
+
+</div>
+<div>
+    <div class="ragistration">
 
 
+        <div style="width: 30%; text-align: center;margin-bottom: 12%; margin-left:35%;">
+            <fieldset class="fieldsetCssForFirstRegisteration">
+                <form [formGroup]='registerationDetails' (ngSubmit)='onRegisterDetailsSubmit()'>
+                    <div>
+                        <label class="label_css">Free Registration</label></div>
+                    <div>
+                        <label class="label_color">Enter Your Name:</label>
+                        <input class="input_field" placeholder="Enter Your Full Name *" type=" text " formControlName="f_name" />
+                    </div>
+                    <div>
+                        <label class="label_color">Enter Your Email:</label>
+                        <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="mail" />
+                    </div>
+                    <div>
+                        <label class="label_color" style="margin-right: 25%;">Gender:</label>
+                        <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+                        <label class="label_color" for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+                        <label class="label_color" for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other" formControlName="gender">
+                        <label class="label_color" for="other">Other</label><br>
+                    </div>
+                    <div>
 
-    </div>
-    <hr style="height:3px;border:none;color:#333;background-color:#333;">
-    <div style="width: 30%; text-align: center;margin-bottom: 5%;margin-top: 5%; margin-left:35%;">
-        <fieldset class="fieldsetCssForFirstRegisteration">
-            <form [formGroup]='registerationDetails' (ngSubmit)='onRegisterDetailsSubmit()'>
-                <div>
-                    <label class="label_css">Free Registration</label></div>
-                <div>
-                    <label class="label_color">Enter Your Name:</label>
-                    <input class="input_field" placeholder="Enter Your Full Name *" type=" text " formControlName="f_name" />
-                </div>
-                <div>
-                    <label class="label_color">Enter Your Email:</label>
-                    <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="mail" />
-                </div>
-                <div>
-                    <label class="label_color" style="margin-right: 25%;">Gender:</label>
-                    <input type="radio" id="male" name="gender" value="male" formControlName="gender">
-                    <label class="label_color" for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female" formControlName="gender">
-                    <label class="label_color" for="female">Female</label>
-                    <input type="radio" id="other" name="gender" value="other" formControlName="gender">
-                    <label class="label_color" for="other">Other</label><br>
-                </div>
-                <div>
-
-                    <div style="margin-top: 2%;">
-                        <label class="label_color" style="margin-right: 8%;">Mother Tongue:</label>
-                        <select class="blockSelectBox" style="margin-right: 18%;" id=" languege " formControlName="m_tongue">
+                        <div style="margin-top: 2%;">
+                            <label class="label_color" style="margin-right: 8%;">Mother Tongue:</label>
+                            <select class="blockSelectBox" style="margin-right: 18%;" id=" languege " formControlName="m_tongue">
 <option class=" optionField " value="select ">-Select-</option>
 </select>
-                    </div>
-                    <div style="margin-top: 2%; ">
-                        <label class="label_color " style="margin-right: 15%;">Profile For :</label>
-                        <select class="blockSelectBox " id="profile_for " style="margin-right: 18%;" formControlName="profile_for">
+                        </div>
+                        <div style="margin-top: 2%; ">
+                            <label class="label_color " style="margin-right: 15%;">Profile For :</label>
+                            <select class="blockSelectBox " id="profile_for " style="margin-right: 18%;" formControlName="profile_for">
   <option class="optionField " value="Select ">-Select-</option>
   
 </select></div>
-                    <div style="margin-top: 2%; ">
-                        <label class="label_color " style="margin-right: 20%;">Religion :</label>
-                        <select class="blockSelectBox " style="margin-right: 18%;" id="religion_selection " (change)="castelist($event.target.value) " formControlName="userReligion">
+                        <div style="margin-top: 2%; ">
+                            <label class="label_color " style="margin-right: 20%;">Religion :</label>
+                            <select class="blockSelectBox " style="margin-right: 18%;" id="religion_selection " (change)="castelist($event.target.value) " formControlName="userReligion">
             <option class="optionField " *ngFor="let religion of religionList " [value]="religion.religion_id ">{{religion.religion_name}}</option>
         </select></div>
-                    <div style="margin-top: 2%; ">
-                        <label class="label_color " style="margin-right: 25%;">Caste :</label>
-                        <select class="blockSelectBox " style="margin-right: 18%;" id="caste_selection " formControlName="userCaste">
+                        <div style="margin-top: 2%; ">
+                            <label class="label_color " style="margin-right: 25%;">Caste :</label>
+                            <select class="blockSelectBox " style="margin-right: 18%;" id="caste_selection " formControlName="userCaste">
             <option class="optionField " *ngFor="let caste of castes " [value]='caste.caste_id'>{{caste.caste_name}}</option>
         </select></div>
-                    <div style="margin-top: 5%; ">
-                        <button class="submitBtn " type="button ">Submit</button>
-                    </div>
+                        <div style="margin-top: 5%; ">
+                            <button class="submitBtn " type="button ">Submit</button>
+                        </div>
 
-                </div>
-            </form>
-        </fieldset>
-    </div>
-    <div>
-        <hr>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <div>
+            <hr>
+        </div>
     </div>
 </div>
-
 
 
 <!--Login Pop start-->

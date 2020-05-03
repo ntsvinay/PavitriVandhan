@@ -1,19 +1,25 @@
-<div style="text-align: left; background-color: burlywood;">
-    <div *ngFor="let details of apiData" style="width: 600px;height: 300px; margin-top: 5%; margin-left: 25%; ">
-        <fieldset style="background-color: white;">
-            <div class="row">
-                <div class="column" style="margin-left: 2%; width: 180px;">
+<div class="header">
 
-                    <img style="border: black; border-radius: 4%; border-width: 2px;border-style: outset; width: 150px; height: 180px;" src="assets/images/vinay.jpg">
+    <app-header></app-header>
+
+</div>
+
+<div class="content" style="text-align: left;z-index:1000; background-color: rgba(228, 192, 198, 0.432)">
+    <div *ngFor="let details of apiData " style="width: 600px;height: 300px; margin-left: 25%; ">
+        <fieldset style="background-color: white; ">
+            <div class="row ">
+                <div class=" column " style="margin-left: 2%; width: 180px; ">
+
+                    <img style="border: black; border-radius: 4%; border-width: 2px;border-style: outset; width: 150px; height: 180px; " src="assets/images/vinay.jpg ">
                 </div>
 
-                <div class="column" style="width: 200px;">
+                <div class="column " style="width: 200px; ">
 
 
-                    <div class="row" style="margin-top: 5%;">
+                    <div class="row " style="margin-top: 5%; ">
 
 
-                        <div class="column" style="margin-left: 5%;">
+                        <div class="column " style="margin-left: 5%; ">
                             <p>{{details.name}},{{details.username}}</p>
 
                         </div>
@@ -21,11 +27,11 @@
 
                     </div>
 
-                    <div class="row">
-                        <div class="column">
+                    <div class="row ">
+                        <div class="column ">
                             <p>22 yrs,</p>
                         </div>
-                        <div class="column">
+                        <div class="column ">
                             <p>Never Married</p>
 
                         </div>
@@ -33,23 +39,23 @@
 
 
                     </div>
-                    <div class="row">
-                        <div class="column">
+                    <div class="row ">
+                        <div class="column ">
                             <p>5.8 ft,</p>
 
                         </div>
-                        <div class="column">
+                        <div class="column ">
                             <p>English</p>
                         </div>
 
 
                     </div>
 
-                    <div class="row">
-                        <div class="column">
+                    <div class="row ">
+                        <div class="column ">
                             <p>{{details.address.street}},{{details.address.city}},</p>
                         </div>
-                        <div class="column">
+                        <div class="column ">
                             <p>Baghel</p>
 
                         </div>
@@ -60,24 +66,24 @@
                 </div>
 
 
-                <div class="column" style="margin-top: 8%; width: 150px; margin-left: 5%;">
-                    <div class="row">
+                <div class="column " style="margin-top: 8%; width: 150px; margin-left: 5%; ">
+                    <div class="row ">
 
-                        <div class="column">
+                        <div class="column ">
                             <p>Software Engineer</p>
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row ">
 
-                        <div class="column">
+                        <div class="column ">
                             <p>MCA</p>
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row ">
 
-                        <div class="column">
+                        <div class="column ">
                             <p>6,00,000/-</p>
                         </div>
 
@@ -86,11 +92,11 @@
             </div>
             <div>
 
-                <input class="submitBtn" style="margin-left: 30%;" type="button" value="Send Interest">
-                <button id="{{details.id}}" class="submitBtn" style="margin-left: 5%;" (click)="shortlist(details.id)"> Shortlist
+                <input class="submitBtn " style="margin-left: 30%; " type="button " value="Send Interest ">
+                <button id="{{details.id}} " class="submitBtn " style="margin-left: 5%; " (click)="shortlist(details.id) "> Shortlist
 
-                    <img id="{{details.id}}" *ngIf="shortList_userId.includes(details.id)==true" src="{{icon1}}" style="padding-left: 5%; width: 20%;">
-                    <img id="{{details.id}}" *ngIf="shortList_userId.includes(details.id)==false" src="{{icon}}" style="padding-left: 5%; width: 20%;">
+                    <img id="{{details.id}} " *ngIf="shortList_userId.includes(details.id)==true " src="{{icon1}} " style="padding-left: 5%; width: 20%; ">
+                    <img id="{{details.id}} " *ngIf="shortList_userId.includes(details.id)==false " src="{{icon}} " style="padding-left: 5%; width: 20%; ">
                     
                 </button>
 
