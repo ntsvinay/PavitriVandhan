@@ -16,10 +16,10 @@ export class FirstregisterationComponent implements OnInit {
   registerationDetails: FormGroup;
   castes;
   religionList;
-  // casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
-  // religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
-  casteApi = 'http://localhost:8080/caste/';
-  religionApi = 'http://localhost:8080/allReligion';
+  casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
+  religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
+  // casteApi = 'http://localhost:8080/caste/';
+  // religionApi = 'http://localhost:8080/allReligion';
 
   castelist(valueReligions) {
 
