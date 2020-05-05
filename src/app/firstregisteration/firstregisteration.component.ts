@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -15,10 +16,10 @@ export class FirstregisterationComponent implements OnInit {
   registerationDetails: FormGroup;
   castes;
   religionList;
-  casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
-  religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
-  // casteApi = 'http://localhost:8080/caste/';
-  // religionApi = 'http://localhost:8080/allReligion';
+  // casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
+  // religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
+  casteApi = 'http://localhost:8080/caste/';
+  religionApi = 'http://localhost:8080/allReligion';
 
   castelist(valueReligions) {
 
@@ -32,12 +33,18 @@ export class FirstregisterationComponent implements OnInit {
   }
   //submiting the login details
   onRegisterDetailsSubmit() {
-  
+
     alert(this.registerationDetails.value.f_name + this.registerationDetails.value.mail + this.registerationDetails.value.gender + this.registerationDetails.value.m_tongue
-   
+
       + this.registerationDetails.value.profile_for + this.registerationDetails.value.userReligion + this.registerationDetails.value.userCaste);
-  
+
+    if (this.registerationDetails.value.f_name == '' ) {
+      this.router.navigate(['/firstregisteration']);
     }
+    else {
+      this.router.navigate(['/inforamtionpage']);
+    }
+  }
 
 
 
@@ -46,7 +53,7 @@ export class FirstregisterationComponent implements OnInit {
   showModal: boolean;
   registerForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
 
 
 

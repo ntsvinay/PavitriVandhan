@@ -5,6 +5,11 @@
     margin-top: 5%;
 }
 
+body,
+html {
+    height: 100%;
+}
+
 @media only screen and (max-width: 900px) {
     /* Style adjustments for non responsive websites */
     body {
