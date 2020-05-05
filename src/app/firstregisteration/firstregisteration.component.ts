@@ -15,8 +15,8 @@ export class FirstregisterationComponent implements OnInit {
   registerationDetails: FormGroup;
   castes;
   religionList;
-  casteApi = 'http://pavitrivandhanapi.herokuapp.com/caste/';
-  religionApi = 'http://pavitrivandhanapi.herokuapp.com/allReligion';
+  casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
+  religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
   // casteApi = 'http://localhost:8080/caste/';
   // religionApi = 'http://localhost:8080/allReligion';
 
@@ -68,10 +68,10 @@ export class FirstregisterationComponent implements OnInit {
       f_name: ['', [Validators.required]],
       mail: ['', [Validators.required, Validators.email]],
       gender: ['', [Validators.required]],
-      m_tongue: ['', [Validators.required]],
-      profile_for: ['', [Validators.required]],
-      userReligion: ['', [Validators.required]],
-      userCaste: ['', [Validators.required]]
+      m_tongue: ['-Select-', [Validators.required]],
+      profile_for: ['-Select-', [Validators.required]],
+      userReligion: ['-Select', [Validators.required]],
+      userCaste: ['-Select-', [Validators.required]]
 
     })
 
