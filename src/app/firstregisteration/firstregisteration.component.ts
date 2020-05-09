@@ -16,6 +16,8 @@ export class FirstregisterationComponent implements OnInit {
   registerationDetails: FormGroup;
   castes;
   religionList;
+
+  saveRegistrationDetails = 'http://localhost:8080/userDetails';
   casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
   religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
   // casteApi = 'http://localhost:8080/caste/';
@@ -34,15 +36,24 @@ export class FirstregisterationComponent implements OnInit {
   //submiting the login details
   onRegisterDetailsSubmit() {
 
-    alert(this.registerationDetails.value.f_name + this.registerationDetails.value.mail + this.registerationDetails.value.gender + this.registerationDetails.value.m_tongue
+    alert(this.registerationDetails.value.userName + this.registerationDetails.value.userEmail + this.registerationDetails.value.userGender + this.registerationDetails.value.userMotherTongue
 
-      + this.registerationDetails.value.profile_for + this.registerationDetails.value.userReligion + this.registerationDetails.value.userCaste);
+      + this.registerationDetails.value.userProfileOwner + this.registerationDetails.value.religion_id + this.registerationDetails.value.caste_id);
 
-    if (this.registerationDetails.value.f_name == '' ) {
+    if (this.registerationDetails.value.userName == '') {
       this.router.navigate(['/firstregisteration']);
+
     }
     else {
-      this.router.navigate(['/inforamtionpage']);
+
+
+      console.warn(this.registerationDetails);
+      this.http.post(this.saveRegistrationDetails, this.registerationDetails.value).subscribe((data: any[]) => {
+
+        console.warn(data)
+
+      })
+      // this.router.navigate(['/inforamtionpage']);
     }
   }
 
@@ -72,13 +83,13 @@ export class FirstregisterationComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
     this.registerationDetails = this.formBuilder.group({
-      f_name: ['', [Validators.required]],
-      mail: ['', [Validators.required, Validators.email]],
-      gender: ['', [Validators.required]],
-      m_tongue: ['-Select-', [Validators.required]],
-      profile_for: ['-Select-', [Validators.required]],
-      userReligion: ['-Select', [Validators.required]],
-      userCaste: ['-Select-', [Validators.required]]
+      userName: ['', [Validators.required]],
+      userEmail: ['', [Validators.required, Validators.email]],
+      userGender: ['', [Validators.required]],
+      userMotherTongue: ['-Select-', [Validators.required]],
+      userProfileOwner: ['-Select-', [Validators.required]],
+      religion_id: ['-Select', [Validators.required]],
+      caste_id: ['-Select-', [Validators.required]]
 
     })
 

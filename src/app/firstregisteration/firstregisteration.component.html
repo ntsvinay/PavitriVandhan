@@ -16,43 +16,43 @@
                     <label class="label_css">Free Registration</label></div>
                 <div>
                     <label class="label_color">Enter Your Name:</label>
-                    <input class="input_field" placeholder="Enter Your Full Name *" type=" text " formControlName="f_name" />
+                    <input class="input_field" placeholder="Enter Your Full Name *" type=" text " formControlName="userName" />
                 </div>
                 <div>
                     <label class="label_color">Enter Your Email:</label>
-                    <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="mail" />
+                    <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="userEmail" />
                 </div>
                 <div>
                     <label class="label_color">Gender:</label>
-                    <input type="radio" id="male" name="gender" value="male" style="margin-left: 25%;" formControlName="gender">
+                    <input type="radio" id="male" name="userGender" value="male" style="margin-left: 25%;" formControlName="userGender">
                     <label class="label_color" for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+                    <input type="radio" id="female" name="userGender" value="female" formControlName="userGender">
                     <label class="label_color" for="female">Female</label>
-                    <input type="radio" id="other" name="gender" value="other" formControlName="gender">
+                    <input type="radio" id="other" name="userGender" value="other" formControlName="userGender">
                     <label class="label_color" for="other">Other</label><br>
                 </div>
                 <div>
 
                     <div style="margin-top: 2%;">
                         <label class="label_color" style="margin-right: 8%;">Mother Tongue:</label>
-                        <select class="blockSelectBox" style="margin-right: 18%;" id=" languege " formControlName="m_tongue">
+                        <select class="blockSelectBox" style="margin-right: 18%;" id=" languege " formControlName="userMotherTongue">
 <option class=" optionField " value="select ">-Select-</option>
 </select>
                     </div>
                     <div style="margin-top: 2%; ">
                         <label class="label_color " style="margin-right: 15%;">Profile For :</label>
-                        <select class="blockSelectBox " id="profile_for " style="margin-right: 18%;" formControlName="profile_for">
+                        <select class="blockSelectBox " id="profile_for " style="margin-right: 18%;" formControlName="userProfileOwner">
   <option class="optionField " value="Select ">-Select-</option>
   
 </select></div>
                     <div style="margin-top: 2%; ">
                         <label class="label_color " style="margin-right: 20%;">Religion :</label>
-                        <select class="blockSelectBox " style="margin-right: 18%;" id="religion_selection " (change)="castelist($event.target.value) " formControlName="userReligion">
+                        <select class="blockSelectBox " style="margin-right: 18%;" id="religion_selection " (change)="castelist($event.target.value) " formControlName="religion_id">
             <option class="optionField " *ngFor="let religion of religionList " [value]="religion.religion_id ">{{religion.religion_name}}</option>
         </select></div>
                     <div style="margin-top: 2%; ">
                         <label class="label_color " style="margin-right: 25%;">Caste :</label>
-                        <select class="blockSelectBox " style="margin-right: 18%;" id="caste_selection " formControlName="userCaste">
+                        <select class="blockSelectBox " style="margin-right: 18%;" id="caste_selection " formControlName="caste_id">
             <option class="optionField " *ngFor="let caste of castes " [value]='caste.caste_id'>{{caste.caste_name}}</option>
         </select></div>
                     <div style="margin-top: 5%; ">
