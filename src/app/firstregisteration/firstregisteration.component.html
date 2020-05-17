@@ -14,13 +14,19 @@
             <form [formGroup]='registerationDetails' (ngSubmit)='onRegisterDetailsSubmit()'>
                 <div>
                     <label class="label_css">Free Registration</label></div>
+                <h3 style="font-size: small; color: red;" *ngIf="onRegistrationSubmitError">Email is already registered with us!!</h3>
                 <div>
                     <label class="label_color">Enter Your Name:</label>
                     <input class="input_field" placeholder="Enter Your Full Name *" type=" text " formControlName="userName" />
+
                 </div>
                 <div>
                     <label class="label_color">Enter Your Email:</label>
-                    <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="userEmail" />
+                    <input class="input_field" placeholder="Enter Email Address *" type="email " formControlName="userEmail" [ngClass]="{ 'is-invalid': onRegistrationSubmitError && reg.userEmail.errors}" />
+                    <div *ngIf="onRegistrationSubmitError && reg.userEmail.errors" class="invalid-feedback">
+                        <div *ngIf="reg.userEmail.errors.required">Email is required</div>
+                        <div *ngIf="reg.userEmail.errors.email">Email must be a valid email address</div>
+                    </div>
                 </div>
                 <div>
                     <label class="label_color">Gender:</label>
@@ -36,13 +42,13 @@
                     <div style="margin-top: 2%;">
                         <label class="label_color" style="margin-right: 8%;">Mother Tongue:</label>
                         <select class="blockSelectBox" style="margin-right: 18%;" id=" languege " formControlName="userMotherTongue">
-<option class=" optionField " value="select ">-Select-</option>
+<option class=" optionField " *ngFor="let motherTongue of motherTongueList" [value]="motherTongue.motherTongueId">{{motherTongue.motherTongueName}}</option>
 </select>
                     </div>
                     <div style="margin-top: 2%; ">
                         <label class="label_color " style="margin-right: 15%;">Profile For :</label>
                         <select class="blockSelectBox " id="profile_for " style="margin-right: 18%;" formControlName="userProfileOwner">
-  <option class="optionField " value="Select ">-Select-</option>
+  <option class="optionField " *ngFor="let profileOwner of profileOwnerList" [value]="profileOwner.profileCreaterId">{{profileOwner.profileCreaterName}}</option>
   
 </select></div>
                     <div style="margin-top: 2%; ">
@@ -52,8 +58,8 @@
         </select></div>
                     <div style="margin-top: 2%; ">
                         <label class="label_color " style="margin-right: 25%;">Caste :</label>
-                        <select class="blockSelectBox " style="margin-right: 18%;" id="caste_selection " formControlName="caste_id">
-            <option class="optionField " *ngFor="let caste of castes " [value]='caste.caste_id'>{{caste.caste_name}}</option>
+                        <select class="blockSelectBox " style="margin-right: 18%;" id="caste_selection " formControlName="userCaste">
+            <option class="optionField " *ngFor="let caste of castes " [value]='caste.id'>{{caste.caste_name}}</option>
         </select></div>
                     <div style="margin-top: 5%; ">
                         <button class="submitBtn " type="button ">Submit</button>
