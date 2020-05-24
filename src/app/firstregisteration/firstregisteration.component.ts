@@ -33,6 +33,7 @@ export class FirstregisterationComponent implements OnInit {
   registrationApiReturnData;
 
   saveRegistrationDetails = 'http://localhost:8080/userDetails';
+  userLoginApi = 'http://localhost:8080/userLoging';
   // casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
   // religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
   casteApi = 'http://localhost:8080/caste/';
@@ -83,18 +84,7 @@ get reg(){return this.registerationDetails.controls}
        this.http.post(this.saveRegistrationDetails, this.registerationDetails.value).subscribe
        (data=>(this.router.navigate(['/preferences'])),error=>(this.onRegistrationSubmitError=true));
        
-      //   this.registrationApiReturnData = res;
-      // }
-      
-      // ,(err:HttpErrorResponse)=>{
-      //   this.onRegistrationSubmitError=true;      
-      // });
-      
-      // this.router.navigate(['/preferences']);
      
-      
-      //  this.router.navigate(['/inforamtionpage']);
-    
 
   
   }
@@ -158,6 +148,10 @@ get reg(){return this.registerationDetails.controls}
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
   onSubmit() {
+    let basicSetup={
+      "userName": this.registerForm.value.password,
+      "userEmail": this.registerForm.value.email,
+    }
     alert(this.registerForm.value.email);
     this.submitted = true;
     // stop here if form is invalid
@@ -167,6 +161,24 @@ get reg(){return this.registerationDetails.controls}
     if (this.submitted) {
       this.showModal = false;
     }
+    //login user validation
+    this.registerationDetails = this.formBuilder.group(basicSetup);
+    this.http.post(this.userLoginApi, this.registerationDetails.value).subscribe
+       ((data)=>{
+         if(data==null)
+         {
+          this.router.navigate(['/firstregisteration'])
+         }
+         else{
+          this.router.navigate(['/myprofile'])
+         }
+
+
+       })
+        
+        
+        // (this.router.navigate(['/preferences'])),error=>(this.onRegistrationSubmitError=true));
+
 
   }
 
