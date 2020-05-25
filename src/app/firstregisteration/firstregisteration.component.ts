@@ -147,6 +147,7 @@ get reg(){return this.registerationDetails.controls}
   }
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
+  
   onSubmit() {
     let basicSetup={
       "userName": this.registerForm.value.password,
@@ -167,10 +168,12 @@ get reg(){return this.registerationDetails.controls}
        ((data)=>{
          if(data==null)
          {
+           
           this.router.navigate(['/firstregisteration'])
          }
          else{
-          this.router.navigate(['/myprofile'])
+          
+          this.router.navigate(['/myprofile',{p1:data}])
          }
 
 

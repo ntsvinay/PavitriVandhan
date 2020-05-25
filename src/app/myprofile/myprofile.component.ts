@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {} from './LoginServiceService';
+import {Route,ActivatedRoute,Params} from '@angular/router';
+import { LoginServiceService } from './login-service.service';
 
 @Component({
   selector: 'app-myprofile',
@@ -8,11 +9,25 @@ import {} from './LoginServiceService';
 })
 export class MyprofileComponent implements OnInit {
 
-  constructor(private loginServiceService:LoginServiceService) { 
+valueD;
+val;
+  constructor(private activeRoute: ActivatedRoute) { 
+    
     
   }
 
   ngOnInit(): void {
+  this.activeRoute.params.subscribe((params)=> {
+    const val=params['p1'];
+    this.valueD=val;
+    alert(val);
+         
+     
+  });
+  alert(this.valueD);
+  this.val=Object.values(this.valueD);
+  alert(this.val);
+     
   }
 
 }

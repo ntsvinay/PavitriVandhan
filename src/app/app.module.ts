@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { from } from 'rxjs';
+import { LoginServiceService } from './login-service.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,10 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
-  providers: [],
+  providers: [LoginServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
