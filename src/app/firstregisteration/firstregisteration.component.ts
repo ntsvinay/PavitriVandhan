@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginServiceService } from 'src/app/login-service.service';
 import { Injectable } from '@angular/core';
 import {
   HttpInterceptor,
@@ -15,6 +16,7 @@ import {
 import { Observable, EMPTY, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ok } from 'assert';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-firstregisteration',
@@ -32,24 +34,30 @@ export class FirstregisterationComponent implements OnInit {
   profileOwnerList;
   registrationApiReturnData;
 
-  saveRegistrationDetails = 'http://localhost:8080/userDetails';
-  userLoginApi = 'http://localhost:8080/userLoging';
-  // casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
-  // religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
-  casteApi = 'http://localhost:8080/caste/';
-  religionApi = 'http://localhost:8080/allReligion';
-  profileOwnerApi = 'http://localhost:8080/profileOwner';
-  mothertongueApi = 'http://localhost:8080/motherTongue';
+  
+  casteApi = 'https://pavitrivandhanapi.herokuapp.com/caste/';
+  religionApi = 'https://pavitrivandhanapi.herokuapp.com/allReligion';
+  saveRegistrationDetails = 'https://pavitrivandhanapi.herokuapp.com/userDetails';
+  userLoginApi = 'https://pavitrivandhanapi.herokuapp.com/userLoging';
+  profileOwnerApi = 'https://pavitrivandhanapi.herokuapp.com/profileOwner';
+  mothertongueApi = 'https://pavitrivandhanapi.herokuapp.com/motherTongue';
+  //local database
+  // saveRegistrationDetails = 'http://localhost:8080/userDetails';
+  // userLoginApi = 'http://localhost:8080/userLoging';
+  // casteApi = 'http://localhost:8080/caste/';
+  // religionApi = 'http://localhost:8080/allReligion';
+  // profileOwnerApi = 'http://localhost:8080/profileOwner';
+  // mothertongueApi = 'http://localhost:8080/motherTongue';
 
   castelist(valueReligions) {
-
     this.casteApi = this.casteApi;
         this.http.get(this.casteApi + valueReligions).subscribe((data) => {
       console.warn(data)
       this.castes = data;
     })
-
   }
+
+
 get reg(){return this.registerationDetails.controls}
   onRegistrationSubmitError=false;
 
@@ -83,21 +91,17 @@ get reg(){return this.registerationDetails.controls}
       console.warn(this.registerationDetails);
        this.http.post(this.saveRegistrationDetails, this.registerationDetails.value).subscribe
        (data=>(this.router.navigate(['/preferences'])),error=>(this.onRegistrationSubmitError=true));
-       
-     
+         }
 
-  
-  }
+         //Login Pop start from here
 
-
-
-  //Login Pop start from here
 
   showModal: boolean;
   registerForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
 
+  constructor(private formBuilder: FormBuilder, private http: HttpClient,
+     private router: Router,private loginservice: LoginServiceService,private authService:AuthService) {
 
 
   }
@@ -110,6 +114,7 @@ get reg(){return this.registerationDetails.controls}
     this.showModal = false;
   }
   ngOnInit() {
+    // debugger
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -168,12 +173,13 @@ get reg(){return this.registerationDetails.controls}
        ((data)=>{
          if(data==null)
          {
-           
+        
           this.router.navigate(['/firstregisteration'])
          }
          else{
-          
-          this.router.navigate(['/myprofile',{p1:data}])
+           this.loginservice.loggedInUser(data);
+          this.router.navigate(['/myprofile']);
+          this.authService.setUserLoggedIn(true);
          }
 
 

@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { from } from 'rxjs';
 import { LoginServiceService } from './login-service.service';
+import { AuthService } from './auth.service';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { LoginServiceService } from './login-service.service';
     HttpClientModule,
 
   ],
-  providers: [LoginServiceService],
+  providers: [LoginServiceService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

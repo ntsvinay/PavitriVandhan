@@ -3,7 +3,9 @@
     <app-header></app-header>
 
 </div>
-<div class="content" style="z-index:1000;">
+
+<div *ngIf="valueD">{{ errorMsg }}</div>
+<div class="content" style="z-index:1000;" *ngIf="valueD">
     <div class="row" style="background-color:  rgba(228, 192, 198, 0.432);">
         <div class="column" style="margin-top: 5%;">
             <fieldset style="margin-left: 50px; ">
@@ -13,7 +15,8 @@
                         <img style="width: 100px;" src="assets/images/maleDummy.png">
                     </div>
                     <div class="column">
-                        <label>Vinay Kumar baghel</label>
+                        <label>{{val.userName}}<br>{{val.userCaste.caste_name}}-{{val.userReligion.religion_name}}</label>
+
                     </div>
 
                     <div class="verticalLine"></div>

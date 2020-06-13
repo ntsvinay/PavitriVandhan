@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Route,ActivatedRoute,Params} from '@angular/router';
-import { LoginServiceService } from './login-service.service';
-
+import {ActivatedRoute} from '@angular/router';
+import { LoginServiceService } from 'src/app/login-service.service';
+import { Router } from '@angular/router';
+import { from } from 'rxjs';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
@@ -9,25 +10,45 @@ import { LoginServiceService } from './login-service.service';
 })
 export class MyprofileComponent implements OnInit {
 
-valueD;
+valueD=false;
+errorMsg='invalid user';
 val;
-  constructor(private activeRoute: ActivatedRoute) { 
+  constructor(private activeRoute: ActivatedRoute,private loginservice: LoginServiceService
+    ,private router: Router) { 
     
     
   }
 
   ngOnInit(): void {
-  this.activeRoute.params.subscribe((params)=> {
-    const val=params['p1'];
-    this.valueD=val;
-    alert(val);
+
+    this.loginservice.msg.subscribe((data)=>{
+      this.val=data;
+      if(this.val.userName==undefined){
+        // this.router.navigate(['/firstregisteration'])
+       this.valueD=false;
+      }
+      else{
+        
+      
+      this.valueD=true;
+      
+    }
+
+    })
+  
+  }
+
+  // this.activeRoute.params.subscribe((params)=> {
+  //   const val=params['p1'];
+  //   this.valueD=val;
+  //   alert(val);
          
      
-  });
-  alert(this.valueD);
-  this.val=Object.values(this.valueD);
-  alert(this.val);
+  // });
+  // alert(this.valueD);
+  // this.val=Object.values(this.valueD);
+  // alert(this.val);
      
-  }
+  // }
 
 }
